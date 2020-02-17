@@ -12,7 +12,7 @@ class Graph:
     def add_vertex(self, vertex_id):
         """
         Add a vertex to the graph.
-        """
+        """           
         self.vertices[vertex_id] = set()
 
     def add_edge(self, v1, v2):
@@ -35,7 +35,15 @@ class Graph:
         Print each vertex in breadth-first order
         beginning from starting_vertex.
         """
-        pass  # TODO
+        # Create an empty queue, add starting vertex id to queue
+        # Create an empty set to store visited nodes
+        # While the queue is not empty...
+            # Dequeue the first vertex
+            # check if it's been visited
+            # if it has not been visited
+                # Mark it as visited 
+                # Then add all the neighbors to the back of the queue
+        
 
     def dft(self, starting_vertex):
         """
