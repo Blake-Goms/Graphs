@@ -122,20 +122,33 @@ class Graph:
         # visited = { 1,2,3,4}
         # take the first [] in the list, go through it, then add neighbor, then addd new [] to back of queue
         # [1,2,3,5]
+        
         # Create an empty queue
+        q = Queue()
         # Add A PATH TO the starting vertex_id to the queue
+        q.enqueue([starting_vertex])
         # Create an empty set to store visited nodes
+        visited = set()
         # While the queue is not empty...
+        while q.size() > 0:
             # Dequeue, the first PATH
+            v = q.dequeue()
             # GRAB THE LAST VERTEX FROM THE PATH
+            if v[-1] == destination_vertex:
+                return v
             # CHECK IF IT'S THE TARGET
+            if v[-1] not in visited:
                 # IF SO, RETURN THE PATH
-            # Check if it's been visited
-            # If it has not been visited...
+                path = []
+                # If it has not been visited...
+                for item in v:
                 # Mark it as visited
+                    path.append(item)
                 # Then add A PATH TO all neighbors to the back of the queue
-                    # (Make a copy of the path before adding)
-        pass
+                for neighbor in self.get_neighbors(v[-1]):
+                # (Make a copy of the path before adding)
+                    q.enqueue(path + [neighbor])
+        
 
 
 
@@ -145,19 +158,32 @@ class Graph:
         starting_vertex to destination_vertex in
         depth-first order.
         """
-        # Add A PATH TO the starting vertex_id to the stack
+        # Create an empty Stack
+        s = Stack()
+        # Add A PATH TO the starting vertex_id to the queue
+        s.push([starting_vertex])
         # Create an empty set to store visited nodes
-        # While the stack is not empty...
+        visited = set()
+        # While the queue is not empty...
+        while s.size() > 0:
             # pop, the first PATH
+            v = s.pop()
             # GRAB THE LAST VERTEX FROM THE PATH
             # CHECK IF IT'S THE TARGET
+            if v[-1] == destination_vertex:
                 # IF SO, RETURN THE PATH
+                return v
             # Check if it's been visited
-            # If it has not been visited...
+            if v[-1] not in visited:
+                # IF SO, RETURN THE PATH
+                path = []
                 # Mark it as visited
                 # Then add A PATH TO all neighbors to the back of the stack
-                    # (Make a copy of the path before adding)
-        pass
+                # (Make a copy of the path before adding)
+                for item in v:
+                    path.append(item)
+                for neighbor in self.get_neighbors(v[-1]):
+                    s.push(path + [neighbor])
 
     def dfs_recursive(self, starting_vertex, destination_vertex):
         """
