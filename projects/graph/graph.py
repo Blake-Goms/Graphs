@@ -36,13 +36,24 @@ class Graph:
         beginning from starting_vertex.
         """
         # Create an empty queue, add starting vertex id to queue
+        q = Queue()
+        q.enqueue(starting_vertex)
         # Create an empty set to store visited nodes
+        visited = set()
         # While the queue is not empty...
+        while q.size() > 0:
             # Dequeue the first vertex
+            v = q.dequeue()
             # check if it's been visited
             # if it has not been visited
+            if v not in visited:
                 # Mark it as visited 
+                print(v)
+                visited.add(v)
                 # Then add all the neighbors to the back of the queue
+                for neighbor in self.get_neighbors(v):
+                    q.enqueue(neighbor)
+        
         
 
     def dft(self, starting_vertex):
