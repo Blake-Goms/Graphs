@@ -89,7 +89,13 @@ class Graph:
 
         This should be done using recursion.
         """
-        pass  # TODO
+        # HINT: link
+        # hint: default args may help
+        # Check if the node is visited
+        # if not 
+            # mark it as visited
+            # print
+            # Call dft(recursive) on each child
 
     def bfs(self, starting_vertex, destination_vertex):
         """
@@ -97,7 +103,30 @@ class Graph:
         starting_vertex to destination_vertex in
         breath-first order.
         """
-        pass  # TODO
+        # example
+        #destination_vertex = 6
+        # keep checking last number in first []
+        # q = [  [1,2,3,5]  [1,2,4,6], [1,2,4,7]]
+        # visited = { 1,2,3,4}
+        # take the first [] in the list, go through it, then add neighbor, then addd new [] to back of queue
+        # [1,2,3,5]
+        # Create an empty queue
+        # Add A PATH TO the starting vertex_id to the queue
+        # Create an empty set to store visited nodes
+        # While the queue is not empty...
+            # Dequeue, the first PATH
+            # GRAB THE LAST VERTEX FROM THE PATH
+            # CHECK IF IT'S THE TARGET
+                # IF SO, RETURN THE PATH
+            # Check if it's been visited
+            # If it has not been visited...
+                # Mark it as visited
+                # Then add A PATH TO all neighbors to the back of the queue
+                    # (Make a copy of the path before adding)
+
+
+
+
 
     def dfs(self, starting_vertex, destination_vertex):
         """
@@ -107,7 +136,7 @@ class Graph:
         """
         pass  # TODO
 
-    def dfs_recursive(self, starting_vertex):
+    def dfs_recursive(self, starting_vertex, destination_vertex):
         """
         Return a list containing a path from
         starting_vertex to destination_vertex in
