@@ -20,21 +20,23 @@ def earliest_ancestor(ancestors, starting_node):
         path = graph.dfs_recursive(starting_node, vertex)
         if path is not None:
             path_list.append(path)
-    # print(path_list)
+    print('path list', path_list)
     # Create list of the lengths of possible paths
     lengths = []
     for path in path_list:
         lengths.append(len(path))
-    # print(lengths)
+    # print('lengths', lengths)
     # Find the longest path
     for path in path_list:
         if len(path) is max(lengths):
             # Return -1 if only possible path is the same
             if path[-1] is starting_node:
+                print('is starting node', starting_node)
                 return(-1)
             else:
                 # Append possible ends to array
                 possible = []
                 possible.append(path[-1])
                 # Grab the least of possible ends.
+                print('min',min(possible))
                 return min(possible)
