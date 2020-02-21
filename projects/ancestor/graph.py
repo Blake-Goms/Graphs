@@ -292,7 +292,7 @@ class Graph:
         """
         if visited is None:
             visited = set()
-        print('dfs_recursive', starting_vertex)
+        # print('dfs_recursive', starting_vertex)
         visited.add(starting_vertex)
         path = path + [starting_vertex]
         if starting_vertex == destination_vertex:
